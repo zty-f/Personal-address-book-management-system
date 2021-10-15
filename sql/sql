@@ -1,0 +1,28 @@
+create table user (
+  id int auto_increment,
+  userName varchar(30) unique not null ,
+  password varchar(30) unique not null ,
+  name varchar(30) not null,
+  sex varchar(2) not null,
+  birth varchar(10),
+  nation varchar(10),
+  edu varchar(10),
+  work varchar(30),
+  phone varchar(15),
+  place varchar(30),
+  email varchar(30),
+  primary key (id)
+);
+
+create table friend(
+  id int auto_increment,
+  userName varchar(30) not null,
+  name varchar(30),
+  phone varchar(15),
+  email varchar(30),
+  workplace varchar(30),
+  place varchar(30),
+  qq varchar(15),
+  primary key (id),
+  foreign key (userName) references user(userName)
+);
